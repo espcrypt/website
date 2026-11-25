@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  --color-paper: #f6f4ef;
+  --color-paper-2: #edeae2;
+  --color-card: #fbfaf7;
+  --color-ink: #1d1c1a;
+  --color-ink-2: #4a4843;
+  --color-ink-3: #7a776f;
+  --color-rule: #d9d5cb;
+  --color-accent: #1f6b57;
+  --color-accent-2: #17503f;
+  --color-accent-soft: #e1ece7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --color-paper: #161614;
+  --color-paper-2: #1d1d1a;
+  --color-card: #1f1f1c;
+  --color-ink: #ecebe6;
+  --color-ink-2: #b9b6ad;
+  --color-ink-3: #8a877f;
+  --color-rule: #34332f;
+  --color-accent: #5fbf9f;
+  --color-accent-2: #7fd3b6;
+  --color-accent-soft: #1f3a31;
+  color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --color-paper: #161614;
+  --color-paper-2: #1d1d1a;
+  --color-card: #1f1f1c;
+  --color-ink: #ecebe6;
+  --color-ink-2: #b9b6ad;
+  --color-ink-3: #8a877f;
+  --color-rule: #34332f;
+  --color-accent: #5fbf9f;
+  --color-accent-2: #7fd3b6;
+  --color-accent-soft: #1f3a31;
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { min-height: 100vh; background: var(--color-paper); }
+::selection { background: var(--color-accent-soft); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-8; }
+  .eyebrow { @apply font-mono text-xs text-accent; }
+  .h2 { @apply font-display text-3xl font-semibold tracking-tight text-ink sm:text-[2.4rem] sm:leading-tight; }
+  .lead { @apply text-base leading-relaxed text-ink-2 sm:text-lg; }
+  .card { @apply rounded-md border border-rule bg-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors; }
+  .btn-primary { @apply bg-ink text-paper hover:bg-accent-2; }
+  .btn-ghost { @apply border border-ink/25 text-ink hover:border-ink hover:bg-card; }
+  .kbd { @apply rounded border border-rule border-b-2 bg-card px-1.5 py-0.5 font-mono text-[0.8em] text-ink; }
+  .link { @apply text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent; }
+}
+
+.prose-doc h2 { @apply mt-12 mb-3 scroll-mt-24 font-display text-2xl font-semibold text-ink; }
+.prose-doc h3 { @apply mt-8 mb-2 scroll-mt-24 text-lg font-semibold text-ink; }
+.prose-doc p { @apply my-4 leading-relaxed text-ink-2; }
+.prose-doc ul { @apply my-4 list-disc space-y-2 pl-6 text-ink-2 marker:text-ink-3; }
+.prose-doc ol { @apply my-4 list-decimal space-y-2 pl-6 text-ink-2 marker:text-ink-3; }
+.prose-doc a { @apply text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent; }
+.prose-doc strong { @apply font-semibold text-ink; }
+.prose-doc code { @apply rounded bg-paper-2 px-1.5 py-0.5 font-mono text-[0.85em] text-ink; }
+.prose-doc pre { @apply my-5 overflow-x-auto rounded-md border border-rule bg-[#1b1a18] p-4 font-mono text-sm leading-relaxed text-[#ece9e2]; }
+.prose-doc pre code { @apply bg-transparent p-0 text-[#ece9e2]; }
+.prose-doc table { @apply my-5 block w-full overflow-x-auto border-collapse text-left text-sm sm:table; }
+.prose-doc th { @apply border-b-2 border-ink py-2 pr-4 font-semibold text-ink; }
+.prose-doc td { @apply border-b border-rule py-2 pr-4 align-top text-ink-2; }
+.prose-doc .note { @apply my-5 border-l-4 border-accent bg-accent-soft px-4 py-3 text-sm leading-relaxed text-ink; }
+.prose-doc .warn { @apply my-5 border-l-4 border-amber-600 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-ink; }
