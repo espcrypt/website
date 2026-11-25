@@ -1,5 +1,6 @@
 <script>
   let { name, class: cls = 'h-5 w-5' } = $props()
+  const FILLED = ['github', 'windows', 'apple']
   const P = {
     lock: 'M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z M12 15v2',
     unlock: 'M7 11V8a5 5 0 0 1 9.6-2M5 11h14v10H5z M12 15v2',
@@ -26,10 +27,13 @@
     globe: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M3 12h18 M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9 M12 3C9.5 5.5 8.2 8.5 8.2 12s1.3 6.5 3.8 9',
     moon: 'M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z',
     laptop: 'M4 5h16v11H4z M2 19h20',
+    windows: 'M3 5.1l7.4-1v7.3H3z M11.3 4l9.7-1.4v8.8h-9.7z M3 12.6h7.4v7.3L3 18.9z M11.3 12.6H21v8.8l-9.7-1.4z',
+    apple: 'M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8z M14.1 5.8c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.2z',
+    linux: 'M12 2.5c-2.2 0-3.5 1.9-3.5 4.4 0 1.3.3 2.2-.6 3.6-1 1.5-2.6 3.6-2.6 6 0 .9.2 1.6.6 2.2-.9.4-1.9.8-1.9 1.6 0 1 1.6 1.2 3.2 1.2 1.1 0 1.9-.4 2.4-.9h2.8c.5.5 1.3.9 2.4.9 1.6 0 3.2-.2 3.2-1.2 0-.8-1-1.2-1.9-1.6.4-.6.6-1.3.6-2.2 0-2.4-1.6-4.5-2.6-6-.9-1.4-.6-2.3-.6-3.6 0-2.5-1.3-4.4-3.5-4.4z M10.6 6.3h.01 M13.4 6.3h.01 M10.8 8.2c.4.4.8.6 1.2.6s.8-.2 1.2-.6',
   }
 </script>
 
-<svg class={cls} viewBox="0 0 24 24" fill={name === 'github' ? 'currentColor' : 'none'} stroke={name === 'github' ? 'none' : 'currentColor'}
+<svg class={cls} viewBox="0 0 24 24" fill={FILLED.includes(name) ? 'currentColor' : 'none'} stroke={FILLED.includes(name) ? 'none' : 'currentColor'}
   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
   <path d={P[name] ?? ''} />
 </svg>
