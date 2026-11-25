@@ -94,6 +94,7 @@ export default {
       mirror: 'Back-up en mirror', security: 'Beveiligingsmodel',
       license: 'Gelicentieerd onder de GNU LGPL-3.0', contributors: 'ESP Crypt-bijdragers',
     },
+    dl: { button: 'Downloaden', recommended: 'Voor jouw computer', windows: 'Windows', windowsSub: 'Installatieprogramma · Windows 10 en 11', macArm: 'macOS · Apple Silicon', macArmSub: 'M1, M2, M3, M4 en nieuwer', macIntel: 'macOS · Intel', macIntelSub: 'Macs met een Intel-processor', linux: 'Linux · opdrachtregel', linuxSub: 'x64 en arm64', linuxX64: 'x64', linuxArm: 'arm64', all: 'Alle downloads en controlesommen' },
     docsUi: { docs: 'Docs', page: 'Docspagina', prev: '← Vorige', next: 'Volgende →', improve: 'Verbeter deze pagina op GitHub', suffix: 'ESP Crypt-docs' },
   },
 
