@@ -94,6 +94,7 @@ export default {
       mirror: 'Backup und Spiegel', security: 'Sicherheitsmodell',
       license: 'Lizenziert unter der GNU LGPL-3.0', contributors: 'ESP-Crypt-Mitwirkende',
     },
+    dl: { button: 'Herunterladen', recommended: 'Für deinen Computer', windows: 'Windows', windowsSub: 'Installer · Windows 10 und 11', macArm: 'macOS · Apple Silicon', macArmSub: 'M1, M2, M3, M4 und neuer', macIntel: 'macOS · Intel', macIntelSub: 'Macs mit Intel-Prozessor', linux: 'Linux · Kommandozeile', linuxSub: 'x64 und arm64', linuxX64: 'x64', linuxArm: 'arm64', all: 'Alle Downloads und Prüfsummen' },
     docsUi: { docs: 'Doku', page: 'Doku-Seite', prev: '← Zurück', next: 'Weiter →', improve: 'Diese Seite auf GitHub verbessern', suffix: 'ESP-Crypt-Doku' },
   },
 
