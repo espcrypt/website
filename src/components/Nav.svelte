@@ -1,6 +1,7 @@
 <script>
   import Icon from '../lib/Icon.svelte'
-  import { REPO, RELEASES } from '../lib/config.js'
+  import DownloadMenu from './DownloadMenu.svelte'
+  import { REPO } from '../lib/config.js'
   import { go, route } from '../lib/router.svelte.js'
   import { t, i18n, setLang, LANGS } from '../lib/i18n.svelte.js'
   const n = $derived(t().ui.nav)
@@ -50,7 +51,7 @@
         <Icon name={dark ? 'sun' : 'moon'} />
       </button>
       <a href={REPO} target="_blank" rel="noreferrer" class="hidden text-ink-2 hover:text-ink sm:inline-flex" aria-label={n.source}><Icon name="github" /></a>
-      <a href={RELEASES} target="_blank" rel="noreferrer" class="btn btn-primary hidden px-3 py-1.5 text-[13px] sm:inline-flex"><Icon name="download" class="h-3.5 w-3.5" /> {n.download}</a>
+      <DownloadMenu cls="hidden sm:inline-block" buttonClass="btn btn-primary px-3 py-1.5 text-[13px]" align="right" compact />
       <button class="p-2 text-ink md:hidden" aria-label={open ? n.closeMenu : n.openMenu} aria-expanded={open} onclick={() => (open = !open)}>
         <Icon name={open ? 'x' : 'menu'} />
       </button>
@@ -63,7 +64,7 @@
           <a href="#{to}" onclick={(e) => nav(e, to)} class="border-b border-rule py-3 text-ink">{label}</a>
         {/each}
         <a href={REPO} target="_blank" rel="noreferrer" class="flex items-center gap-2 border-b border-rule py-3 text-ink"><Icon name="github" class="h-4 w-4" /> GitHub</a>
-        <a href={RELEASES} target="_blank" rel="noreferrer" class="btn btn-primary mt-4"><Icon name="download" class="h-4 w-4" /> {n.download}</a>
+        <DownloadMenu cls="mt-4" buttonClass="btn btn-primary w-full justify-center" />
       </div>
     </div>
   {/if}
