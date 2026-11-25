@@ -1,10 +1,11 @@
 <script>
   import Icon from '../lib/Icon.svelte'
+  import DownloadMenu from '../components/DownloadMenu.svelte'
   import BoardArt from '../components/BoardArt.svelte'
   import AppPreview from '../components/AppPreview.svelte'
   import Photo from '../components/Photo.svelte'
   import TerminalDemo from '../components/TerminalDemo.svelte'
-  import { RELEASES, REPO } from '../lib/config.js'
+  import { REPO } from '../lib/config.js'
   import { go } from '../lib/router.svelte.js'
   import { t } from '../lib/i18n.svelte.js'
   const nav = (e, to) => { e.preventDefault(); go(to) }
@@ -29,7 +30,7 @@
       <p class="mt-3 font-display text-xl text-ink-2 sm:text-2xl">{s.hero.tagline}</p>
       <p class="lead mt-6 max-w-xl">{s.hero.lead}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href={RELEASES} target="_blank" rel="noreferrer" class="btn btn-primary"><Icon name="download" class="h-4 w-4" /> {s.nav.download}</a>
+        <DownloadMenu />
         <a href="#/docs/getting-started" onclick={(e) => nav(e, '/docs/getting-started')} class="btn btn-ghost">{s.hero.docs}</a>
       </div>
       <p class="mt-6 text-sm text-ink-3">{s.hero.meta}</p>
@@ -172,7 +173,7 @@
         <p class="mt-2 opacity-75">{s.cta.text}</p>
       </div>
       <div class="flex shrink-0 flex-wrap gap-3">
-        <a href={RELEASES} target="_blank" rel="noreferrer" class="btn bg-paper text-ink hover:bg-accent-soft"><Icon name="download" class="h-4 w-4" /> {s.nav.download}</a>
+        <DownloadMenu buttonClass="btn bg-paper text-ink hover:bg-accent-soft" align="right" />
         <a href={REPO} target="_blank" rel="noreferrer" class="btn border border-paper/30 text-paper hover:border-paper"><Icon name="github" class="h-4 w-4" /> GitHub</a>
       </div>
     </div>
