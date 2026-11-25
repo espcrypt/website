@@ -1,0 +1,19 @@
+{
+  "name": "espcrypt-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@tailwindcss/vite": "^4.3.4",
+    "svelte": "^5.57.3",
+    "tailwindcss": "^4.3.4",
+    "vite": "^7.3.7"
+  },
+  "license": "LGPL-3.0-or-later"
+}
